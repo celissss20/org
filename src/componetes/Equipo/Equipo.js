@@ -17,6 +17,7 @@ const Equipo = (props) => {
                         colaboradores.map((colaborador, index) => <Colaborador
                             datos={colaborador}
                             key={index}
+                            colorPrimario={colorPrimario}
                         />)
                     }
                 </div>
