@@ -111,7 +111,7 @@ function App() {
     actualizarColaboradores(nuevosColaboradores)
   }
 
-  //Actualizar color de fondo
+  //Actualizar color de equipo
   const actualizarColor = (color, id ) =>{
     console.log("Cambiar color:",color," - ",id )
     const equiposActualizados = equipos.map((equipo) =>{
@@ -121,6 +121,12 @@ function App() {
       return equipo
     })
     actualizarEquipos(equiposActualizados)
+  }
+
+  //Crear equipo 
+  const crearEquipo = (nuevoEquipo) =>{
+    console.log(nuevoEquipo)
+    actualizarEquipos([...equipos,{...nuevoEquipo,id:uuid()}])
   }
 
 
@@ -133,6 +139,7 @@ function App() {
         mostrarFormulario && <Formulario
           equipos={equipos.map((equipo) => equipo.titulo)}
           registrarColaborador={registrarColaborador}
+          crearEquipo={crearEquipo}
         />
       }
 
